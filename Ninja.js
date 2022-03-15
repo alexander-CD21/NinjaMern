@@ -21,6 +21,24 @@ class Ninja {
         this.salud +=10;
     }
 }
+class Sensei extends Ninja {
+    constructor(nombre, salud = 200, velocidad = 10, fuerza = 10, sabiduria = 10){
+        super( nombre, salud , velocidad, fuerza );
+        this.sabiduria = sabiduria;
+    }
+
+    speakWisdom(){
+        super.drinkSake()
+        console.log("Vive cada dia como si fuera el ultimo.No existe el pasado i el futuro solo esta el presente.")
+        console.log("---------------------------------------------");
+    }
+
+    showStats(){
+        super.showStats();
+        console.log("El valor de sabiduria del sensei:",this.sabiduria);
+    }
+
+}
 
 let ninja1= new Ninja("Alexander");
 ninja1.sayName();
@@ -32,3 +50,8 @@ ninja2.sayName();
 ninja2.showStats();
 ninja2.drinkSake();
 ninja2.showStats();
+
+let sensei=new Sensei("Gonzalo");
+sensei.showStats();
+sensei.speakWisdom();
+sensei.showStats();
